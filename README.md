@@ -5,8 +5,8 @@ Coursera Test Repository
 <html>
 <head>
   <title>Hello Coursera!</title>
-    <head>
-      <body>
-        <h1>Hello COursera!<h1>
-          </body>
-          </html>
+</head>
+<body>
+  <h1>Hello Coursera!</h1>
+</body>
+</html>
