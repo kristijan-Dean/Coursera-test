@@ -1,7 +1,7 @@
 # Coursera-test
 Coursera Test Repository 
 
-<!DOCRYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Hello Coursera!</title>
