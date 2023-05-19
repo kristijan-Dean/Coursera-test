@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .collapsible {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #F7E7CE;
+    }
+
+    .content {
+      padding: 0 5px;
+      display: none;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .month {
+      padding: 15px 25px;
+      width: 100%;
+      background: #F7E7CE;
+      text-align: center;
+    }
+
+    .month ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .month ul li {
+      color: white;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .month .prev,
+    .month .next {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      width: 25%;
+      padding-top: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      transition: 0.3s ease-in-out;
+    }
+
+    .month .prev:hover,
+    .month .next:hover {
+      background-color: #1abc9c;
+    }
+
+    .month .prev {
+      left: 0;
+    }
+
+    .month .next {
+      right: 0;
+    }
+
+    .weekdays {
+      margin: 0;
+      padding: 10px 0;
+      background-color: #ddd;
+      display: flex;
+    }
+
+    .weekdays li {
+      width: 14.28%;
+      text-align: center;
+      list-style-type: none;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .days {
+      margin: 0;
+      padding: 10px 0;
+      background: #eee;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .days li {
+      width: 14.28%;
+      list-style-type: none;
+      text-align: center;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: #777;
+      cursor: pointer;
+    }
+
+    .days li.marked {
+      background-color: red;
+      color: white;
+    }
+
+    .days li.marked:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+    <p>Zauzeti datumi su obelezeni Crvenim:</p>
+
+<script>
+  var lastClickTime = 0;
+  var DOUBLE_CLICK_DELAY = 300; // Delay between clicks in milliseconds
+
+  function toggleContent(month) {
+    var content = document.getElementById(month);
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function markDay(day) {
+    day.classList.toggle('marked');
+  }
+
+  function handleDoubleClick(day) {
+    markDay(day);
+  }
+
+  function handleClick(day) {
+    var currentTime = new Date().getTime();
+    var clickDelay = currentTime - lastClickTime;
+    if (clickDelay < DOUBLE_CLICK_DELAY) {
+      markDay(day);
+    }
+    lastClickTime = currentTime;
+  }
+</script>
+
+<button type="button" class="collapsible" onclick="toggleContent('january')">Januar</button>
+<div id="january" class="content">
+  <div class="month">
+    <ul>
+      <li>Januar</li>
+    </ul>
+  </div>
+  <ul class="weekdays">
+    <li>Pon</li>
+    <li>Uto</li>
+    <li>Sre</li>
+    <li>Cet</li>
+    <li>Pet</li>
+    <li>Sub</li>
+    <li>Ned</li>
+  </ul>
+  <ul class="days">
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">1</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">2</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">3</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">4</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">5</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">6</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">7</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">8</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">9</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">10</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">11</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">12</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">13</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">14</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">15</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">16</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">17</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">18</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">19</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">20</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">21</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">22</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">23</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">24</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">25</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">26</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">27</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">28</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">29</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">30</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">31</li>
+</ul>
+</div>
+
+<button type="button" class="collapsible" onclick="toggleContent('february')">Februar</button>
+<div id="february" class="content">
+  <div class="month">
+    <ul>
+      <li>Februar</li>
+    </ul>
+  </div>
+  <ul class="weekdays">
+    <li>Pon</li>
+    <li>Uto</li>
+    <li>Sre</li>
+    <li>Cet</li>
+    <li>Pet</li>
+    <li>Sub</li>
+    <li>Ned</li>
+  </ul>
+  <ul class="days">
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">1</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">2</li>
+    <li ondblclick="handleDoubleClick(this)" onclick="handleClick(this)">3</li>
+    <!-- ... rest of the days for February ... -->
+  </ul>
+</div>
+
+<!-- ... rest of the months ... -->
+
+</body>
+</html>
